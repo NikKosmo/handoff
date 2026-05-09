@@ -1,0 +1,38 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="color-scheme" content="light dark">
+  <meta name="referrer" content="no-referrer">
+  <meta http-equiv="Content-Security-Policy" content="default-src 'none'; script-src 'self'; style-src 'self'; base-uri 'none'; form-action 'none'">
+  <title>handoff</title>
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body data-state="landing">
+  <main>
+    <h1 class="wordmark">handoff<span aria-hidden="true" class="glyph">&nbsp;&rarr;</span></h1>
+
+    <section class="state state-landing">
+      <p>Hands an encoded URL off to your OS so an installed app opens it.</p>
+      <pre><code>?to=anki%3A%2F%2Fx-callback-url%2Fstudy</code></pre>
+    </section>
+
+    <section class="state state-reject" hidden>
+      <p role="alert">This link couldn&rsquo;t be opened.</p>
+      <p class="muted">Likely cause: missing or denied scheme, or malformed encoding.</p>
+    </section>
+
+    <section class="state state-navigate" hidden>
+      <p>Handing off to <span data-app-name>your app</span>.</p>
+      <p class="muted">If nothing happens, <a href="" data-app-link>tap to open</a>.</p>
+    </section>
+
+    <footer>
+      <a href="https://github.com/NikKosmo/handoff">github.com/NikKosmo/handoff</a>
+    </footer>
+  </main>
+  <script src="handoff.js"></script>
+  <script src="bootstrap.js" defer></script>
+</body>
+</html>
